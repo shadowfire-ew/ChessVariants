@@ -2,6 +2,7 @@
 this module contains the board setup function and board draw function
 running this module on its own plays a game of standard chess
 """
+import pygame
 
 # the board Array which will hold our piece information
 board = []

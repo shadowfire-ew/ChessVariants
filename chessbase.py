@@ -16,3 +16,10 @@ def setup():
     can and should be called multiple times
     sets the gloabl board to an 8x8 list of either none or piece names
     """
+
+def load_pieces():
+    """
+    this function slices the chess set into pygame subsurfaces
+    only reads and slices the image once
+    sets the gloabal piece_set variable
+    """

@@ -10,6 +10,7 @@ board = []
 piece_sheet = None
 # a lookup list for chess piece names
 piece_names = ['king','queen','bishop','rook','knight','pawn']
+size = 0
 
 def setup():
     """
@@ -24,7 +25,7 @@ def load_pieces():
     only reads and slices the image once
     sets the gloabal piece_set variable
     """
-    global piece_sheet
+    global piece_sheet, size
     if piece_sheet is None:
         image  = pygame.image.load("1920px-Chess_Pieces_Sprite.png")
         im_width,im_height = image.get_size()

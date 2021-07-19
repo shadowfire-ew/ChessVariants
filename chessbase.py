@@ -69,8 +69,14 @@ if __name__ == "__main__":
 
         # rendering:
         # set background color
-        # fill out board
-        # show the pieces
+        # using just some gray
+        screen.fill((115,115,115))
+        # fill out board and show the pieces
+        for x in range(8):
+            for y in range(8):
+                # draw tile
+                # draw piece in location
+                pass
         # show overlay lines
         # such as where the piece being hovered over can go
         # or which pieces are pressing check/mate

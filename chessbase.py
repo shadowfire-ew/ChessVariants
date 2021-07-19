@@ -14,7 +14,7 @@ def setup():
     """
     A function that sets up the chess board
     can and should be called multiple times
-    sets the gloabl board to an 8x8 list of either none or piece names
+    sets the global board to an 8x8 list of either none or piece names
     """
 
 def load_pieces():

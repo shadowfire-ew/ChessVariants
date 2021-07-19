@@ -10,8 +10,8 @@ board = []
 piece_sheet = None
 # a lookup list for chess piece names
 piece_names = ['king','queen','bishop','knight','rook','pawn']
-# a global size contoll variable
-size = 0
+# the size of the pieces on the screen in pixels
+size = 80
 
 def setup():
     """
@@ -26,20 +26,21 @@ def load_pieces():
     only reads and slices the image once
     sets the gloabal piece_set variable
     """
-    global piece_sheet, size
+    global piece_sheet
     if piece_sheet is None:
         image  = pygame.image.load("1920px-Chess_Pieces_Sprite.png")
         im_width,im_height = image.get_size()
         # because our set is 2 rows and that our set is full of square sprites
-        size = im_height // 2
+        isize = im_height // 2
         # setting our gloabl piecesheet
         piece_sheet = []
         for color in range(2):
             # white is 0, black is 1
             pset = []
-            for piece in range(im_width//size):
-                rect = (piece*size,color*size,size,size)
-                set.append(image.subsurface(rect))
+            for piece in range(im_width//isize):
+                rect = (piece*isize,color*isize,isize,isize)
+                scaled_image = pygame.transform.scale(image.subsurface(rect),(size,size))
+                pset.append(scaled_image)
             piece_sheet.append(pset)
 
 if __name__ == "__main__":

@@ -43,7 +43,6 @@ def load_pieces():
             piece_sheet.append(pset)
 
 if __name__ == "__main__":
-    global size
     # starting pygame
     pygame.init()
 

@@ -24,3 +24,18 @@ def load_pieces():
     only reads and slices the image once
     sets the gloabal piece_set variable
     """
+    global piece_sheet
+    if piece_sheet is None:
+        image  = pygame.image.load("1920px-Chess_Pieces_Sprite.png")
+        im_width,im_height = image.get_size()
+        # because our set is 2 rows and that our set is full of square sprites
+        size = im_height // 2
+        # setting our gloabl piecesheet
+        piece_sheet = []
+        for color in range(2):
+            # white is 0, black is 1
+            pset = []
+            for piece in range(im_width//size):
+                rect = (piece*size,color*size,size,size)
+                set.append(image.subsurface(rect))
+            piece_sheet.append(pset)

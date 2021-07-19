@@ -53,6 +53,9 @@ if __name__ == "__main__":
     # using 8x12 for dead piece display
     screen = pygame.display.set_mode((size*8,size*12))
 
+    # loading our sprites
+    load_pieces()
+
     while playing:
         # our event queue
         for event in pygame.event.get():
@@ -71,3 +74,8 @@ if __name__ == "__main__":
         # show overlay lines
         # such as where the piece being hovered over can go
         # or which pieces are pressing check/mate
+
+        # just using this here for testing
+        for x in range(2):
+            for y in range(len(piece_sheet[0])):
+                screen.blit(piece_sheet[x][y],(x*size,y*size))

@@ -52,3 +52,22 @@ if __name__ == "__main__":
     # setting up the screen
     # using 8x12 for dead piece display
     screen = pygame.display.set_mode((size*8,size*12))
+
+    while playing:
+        # our event queue
+        for event in pygame.event.get():
+            # checking the event queue
+            # Handling mouse clicks
+            # checking if we have our exit event
+            playing = (event.type != pygame.QUIT)
+        if not playing: break
+
+        # checking for check/mate
+
+        # rendering:
+        # set background color
+        # fill out board
+        # show the pieces
+        # show overlay lines
+        # such as where the piece being hovered over can go
+        # or which pieces are pressing check/mate

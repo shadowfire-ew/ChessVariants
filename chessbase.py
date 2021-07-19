@@ -5,7 +5,7 @@ running this module on its own plays a game of standard chess
 import pygame
 
 # the board Array which will hold our piece information
-board = []
+board = [0,1,2,3,4,5,6,7]
 # the subsurface array for our chess piece images
 piece_sheet = None
 # a lookup list for chess piece names
@@ -23,6 +23,17 @@ def setup():
     can and should be called multiple times
     sets the global board to an 8x8 list of either none or piece names
     """
+    global board
+    for row in range(8):
+        color = 1 - (row // 4)
+        line = None
+        if row == 0 or row == 7:
+            line = [('rook',color),('knight',color),('bishop',color),('queen',color),('king',color),('bishop',color),('knight',color),('rook',color)]
+        elif row == 1 or row == 6:
+            line = [('pawn',color)]*8
+        else:
+            line = [None]*8
+        board[row] = line
 
 def load_pieces():
     """
@@ -61,11 +72,14 @@ if __name__ == "__main__":
     playing = True
 
     # setting up the screen
-    # using 8x12 for dead piece display
-    screen = pygame.display.set_mode((size*8,size*12))
+    # using 2 spaces of padding
+    screen = pygame.display.set_mode((size*12,size*12))
 
     # loading our sprites
     load_pieces()
+
+    # setting up the board
+    setup()
 
     while playing:
         # our event queue

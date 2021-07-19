@@ -15,7 +15,7 @@ size = 80
 # the surfaces which hold our tiles (just solid colors)
 # initialized like this for easy editing of the colors
 # 0 is white, 2 is black
-tiles = [(255,255,255),(0,0,0)]
+tiles = [(255,255,255),(150,25,90)]
 
 def setup():
     """

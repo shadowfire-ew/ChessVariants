@@ -10,6 +10,7 @@ board = []
 piece_sheet = None
 # a lookup list for chess piece names
 piece_names = ['king','queen','bishop','rook','knight','pawn']
+# a global size contoll variable
 size = 0
 
 def setup():

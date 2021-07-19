@@ -85,3 +85,6 @@ if __name__ == "__main__":
         for x in range(2):
             for y in range(len(piece_sheet[0])):
                 screen.blit(piece_sheet[x][y],(x*size,y*size))
+
+        # complete the display
+        pygame.display.flip()

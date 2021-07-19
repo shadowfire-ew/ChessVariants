@@ -9,3 +9,10 @@ board = []
 piece_sheet = None
 # a lookup list for chess piece names
 piece_names = ['king','queen','bishop','rook','knight','pawn']
+
+def setup():
+    """
+    A function that sets up the chess board
+    can and should be called multiple times
+    sets the gloabl board to an 8x8 list of either none or piece names
+    """

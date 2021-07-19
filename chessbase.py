@@ -39,3 +39,15 @@ def load_pieces():
                 rect = (piece*size,color*size,size,size)
                 set.append(image.subsurface(rect))
             piece_sheet.append(pset)
+
+if __name__ == "__main__":
+    global size
+    # starting pygame
+    pygame.init()
+
+    #prepping a loop control variable
+    playing = True
+
+    # setting up the screen
+    # using 8x12 for dead piece display
+    screen = pygame.display.set_mode((size*8,size*12))

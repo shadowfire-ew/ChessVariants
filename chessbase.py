@@ -9,7 +9,7 @@ board = []
 # the subsurface array for our chess piece images
 piece_sheet = None
 # a lookup list for chess piece names
-piece_names = ['king','queen','bishop','rook','knight','pawn']
+piece_names = ['king','queen','bishop','knight','rook','pawn']
 # a global size contoll variable
 size = 0
 

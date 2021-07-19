@@ -12,6 +12,10 @@ piece_sheet = None
 piece_names = ['king','queen','bishop','knight','rook','pawn']
 # the size of the pieces on the screen in pixels
 size = 80
+# the surfaces which hold our tiles (just solid colors)
+# initialized like this for easy editing of the colors
+# 0 is white, 2 is black
+tiles = [(255,255,255),(0,0,0)]
 
 def setup():
     """
@@ -26,7 +30,7 @@ def load_pieces():
     only reads and slices the image once
     sets the gloabal piece_set variable
     """
-    global piece_sheet
+    global piece_sheet, tiles
     if piece_sheet is None:
         image  = pygame.image.load("1920px-Chess_Pieces_Sprite.png")
         im_width,im_height = image.get_size()
@@ -42,6 +46,12 @@ def load_pieces():
                 scaled_image = pygame.transform.scale(image.subsurface(rect),(size,size))
                 pset.append(scaled_image)
             piece_sheet.append(pset)
+        # prepping our tiles:
+        for t in range(2):
+            color = tiles[t]
+            tiles[t] = pygame.Surface((size,size))
+            tiles[t].fill(color)
+
 
 if __name__ == "__main__":
     # starting pygame
@@ -76,6 +86,8 @@ if __name__ == "__main__":
         for x in range(8):
             for y in range(8):
                 # draw tile
+                type = (x+y%2)%2
+                screen.blit(tiles[type],(x*size,(y+2)*size))
                 # draw piece in location
                 pass
         # show overlay lines

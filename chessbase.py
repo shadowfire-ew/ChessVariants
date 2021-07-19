@@ -99,19 +99,21 @@ if __name__ == "__main__":
         # fill out board and show the pieces
         for x in range(8):
             for y in range(8):
+                # fixed pos
+                fixed_pos = ((x+2)*size,(y+2)*size)
                 # draw tile
                 type = (x+y%2)%2
-                screen.blit(tiles[type],(x*size,(y+2)*size))
+                screen.blit(tiles[type],fixed_pos)
                 # draw piece in location
-                pass
+                piece = board[y][x]
+                if piece is not None:
+                    ptype = piece_names.index(piece[0])
+                    pim = piece_sheet[piece[1]][ptype]
+                    screen.blit(pim,fixed_pos)
         # show overlay lines
         # such as where the piece being hovered over can go
         # or which pieces are pressing check/mate
 
-        # just using this here for testing
-        for x in range(2):
-            for y in range(len(piece_sheet[0])):
-                screen.blit(piece_sheet[x][y],(x*size,y*size))
 
         # complete the display
         pygame.display.flip()

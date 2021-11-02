@@ -16,6 +16,11 @@ size = 80
 # initialized like this for easy editing of the colors
 # 0 is white, 2 is black
 tiles = [(255,255,255),(150,25,90)]
+#the padding
+xpadda = 0
+xpaddb = 0
+ypadda = 0
+ypaddb = 0
 
 def setup():
     """
@@ -73,7 +78,7 @@ if __name__ == "__main__":
 
     # setting up the screen
     # using 2 spaces of padding
-    screen = pygame.display.set_mode((size*12,size*12))
+    screen = pygame.display.set_mode((size*(8+xpadda+xpaddb),size*(8+ypadda+ypaddb)))
 
     # loading our sprites
     load_pieces()
@@ -100,7 +105,7 @@ if __name__ == "__main__":
         for x in range(8):
             for y in range(8):
                 # fixed pos
-                fixed_pos = ((x+2)*size,(y+2)*size)
+                fixed_pos = ((x+xpadda)*size,(y+ypadda)*size)
                 # draw tile
                 type = (x+y%2)%2
                 screen.blit(tiles[type],fixed_pos)

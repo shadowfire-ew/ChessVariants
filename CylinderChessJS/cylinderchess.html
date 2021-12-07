@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cylinder Chess</title>
+    <style>
+      body {
+        background-color: beige;
+      }
+    </style>
+    <script src="../examples/lib/webgl-utils.js"></script>
+    <script src="../examples/lib/webgl-debug.js"></script>
+    <script src="../examples/lib/cuon-utils.js"></script>
+    <script src="../examples/lib/cuon-matrix.js"></script>
+    <script src="dictionary.js"></script>
+    <script src="chesslogic.js"></script>
+    <script src="finalProject.js"></script>
+  </head>
+
+  <body onload="main()">
+    <table>
+      <tr>
+        <td style="height: 100%; width: 35%; vertical-align: top;">
+          <h1>Cylinder Chess</h1>
+          <h2 id="turndisplay">White's turn</h2>
+          <h3 id="matedisplay"></h3>
+          <br><br><br>
+          <h3>Last move:</h3>
+          <div id="lastmove">None</div>
+          <button onclick="UndoLastMove()">Undo last move</button>
+          <br><br><br><br><br>
+          <button onclick="ResetBoard()">Reset Board</button>
+        </td>
+        <td>
+          <div style="width: fit-content;">
+            <canvas id="webgl" width="600" height="600">
+            Please use a browser that supports "canvas"
+            </canvas>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <button onclick="ScrollBoard('L')">Scroll Left</button>
+                </td>
+                <td style="float: right;">
+                  <button onclick="ScrollBoard('R')">Scroll Right</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

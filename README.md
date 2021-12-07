@@ -16,3 +16,4 @@ saved as png because i dont want to bother learning how to render svg's
 the cylinder chess variant I programmed for a computer graphics class.
 I am now hosting it here as well. This repo is where further improvements will be made.
 still has some bugs to work out...
+you can play it [here](https://shadowfire-ew.github.io/ChessVariants/CylinderChessJS/cylinderchess.html)
